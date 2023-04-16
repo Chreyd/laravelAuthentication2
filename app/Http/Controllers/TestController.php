@@ -30,7 +30,7 @@ class TestController extends Controller
         $user= ['email'=>'user@test.com', 'name'=>'Monsieur xxx'];
         // Mail::to($user['email'])->send(new TestEmail( $user));
 
-        Mail::to('test@gmail.com')->send(new TestMarkdownMail());
+        Mail::to('stonix20@gmail.com')->send(new TestMarkdownMail());
         // Mail::to('nils@gmail.test')->send(new TestEmail);
 
         /* Mail::send('Html.view', $data, function ($message) {
