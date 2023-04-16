@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\TestEmail;
+use App\Mail\TestMarkdownMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
@@ -27,7 +28,9 @@ class TestController extends Controller
     public function bar()
     {
         $user= ['email'=>'user@test.com', 'name'=>'Monsieur xxx'];
-        Mail::to($user['email'])->send(new TestEmail( $user));
+        // Mail::to($user['email'])->send(new TestEmail( $user));
+
+        Mail::to('test@gmail.com')->send(new TestMarkdownMail());
         // Mail::to('nils@gmail.test')->send(new TestEmail);
 
         /* Mail::send('Html.view', $data, function ($message) {
